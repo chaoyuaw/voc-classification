@@ -20,8 +20,8 @@ class VOCData:
 		test_sets = glob( path.join(image_set_dir, '*_test.txt') )
 		if len(test_sets) == 0:
 			print( "No test set found, evaluating on the val set" )
-			test_sets = glob( path.join(image_sets, '*_val.txt') )
-			trainval_sets = glob( path.join(image_sets, '*_train.txt') )
+			test_sets = glob( path.join(image_set_dir, '*_val.txt') )
+			trainval_sets = glob( path.join(image_set_dir, '*_train.txt') )
 		assert len(test_sets) == len(trainval_sets), "the same number of training and testing classes required"
 		assert len(test_sets) > 0, "at least one training class required 'voc_dir' might point to the wrong location"
 		image_sets = trainval_sets if 'train' in image_set else test_sets
